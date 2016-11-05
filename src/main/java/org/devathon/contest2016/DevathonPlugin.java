@@ -2,6 +2,8 @@ package org.devathon.contest2016;
 
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.devathon.contest2016.machines.IronFurnace;
+import org.devathon.contest2016.machines.Machine;
 
 import java.util.HashMap;
 import java.util.HashSet;
