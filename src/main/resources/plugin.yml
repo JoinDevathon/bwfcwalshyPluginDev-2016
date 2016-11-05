@@ -1,7 +1,7 @@
-name: Devathon Project
-description: A project for the Devathon contest
+name: IndustrialBukkit
+description: A remake of the popular mod IC2 and a few others.
 version: 1.0.0
-author: Your Name Here
+author: bwfcwalshy
 
 main: org.devathon.contest2016.DevathonPlugin
 
