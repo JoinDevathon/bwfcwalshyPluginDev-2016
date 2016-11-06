@@ -2,6 +2,7 @@ package org.devathon.contest2016;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 import org.devathon.contest2016.blocks.BlockBase;
@@ -26,6 +27,14 @@ public class DevathonPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Events(this), this);
 
         tickTask = getServer().getScheduler().runTaskTimer(this, new BlockTickTask(this), 20L, 20L);
+
+        ConfigurationSection sec = getConfig().getConfigurationSection("Blocks");
+        if(sec != null){
+            for(String s : sec.getKeys(false)){
+                handler.addBlock(handler.getBlock(getConfig().getString("Blocks." + s + ".Block")), getLocationFromString(s));
+            }
+        }
+        System.out.println("Loaded " + handler.getBlocks().size() + " blocks!");
     }
 
     @Override
@@ -38,6 +47,7 @@ public class DevathonPlugin extends JavaPlugin {
 
             getConfig().set("Blocks." + getLocationString(loc) + ".Block", block.getSimpleName());
         }
+        saveConfig();
     }
 
     public Handler getHandler(){
@@ -51,7 +61,7 @@ public class DevathonPlugin extends JavaPlugin {
     private Location getLocationFromString(String s){
         String[] split = s.split(",");
         if(split.length != 4) return null;
-        return new Location(Bukkit.getWorld(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3]))
+        return new Location(Bukkit.getWorld(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3]));
     }
 }
 

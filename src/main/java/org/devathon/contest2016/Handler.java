@@ -66,4 +66,10 @@ public class Handler {
     public Map<Location, BlockBase> getBlocks() {
         return blocks;
     }
+
+    public BlockBase getBlock(String string) {
+        for(BlockBase block : registry)
+            if(block.getSimpleName().equalsIgnoreCase(string)) return block;
+        return null;
+    }
 }
