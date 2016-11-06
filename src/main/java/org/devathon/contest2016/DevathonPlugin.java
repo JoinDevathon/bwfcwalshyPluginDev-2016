@@ -1,12 +1,15 @@
 package org.devathon.contest2016;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
+import org.devathon.contest2016.tasks.BlockTickTask;
 
 import java.io.File;
 
 public class DevathonPlugin extends JavaPlugin {
 
     private Handler handler;
+    private BukkitTask tickTask;
 
     @Override
     public void onEnable() {
@@ -18,10 +21,15 @@ public class DevathonPlugin extends JavaPlugin {
         handler.registerRecipes();
 
         getServer().getPluginManager().registerEvents(new Events(this), this);
+
+        tickTask = getServer().getScheduler().runTaskTimer(this, new BlockTickTask(this), 20L, 20L);
     }
 
     @Override
     public void onDisable() {
+        tickTask.cancel();
+
+        // Save data
     }
 
     public Handler getHandler(){

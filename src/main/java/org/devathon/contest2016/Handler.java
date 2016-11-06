@@ -55,7 +55,10 @@ public class Handler {
 
     // This is best to call after the register blocks since this uses the registry.
     public void registerRecipes(){
-        System.out.println("Called");
         registry.forEach(block -> { if(block.getRecipe() != null) Bukkit.addRecipe(block.getRecipe()); });
+    }
+
+    public Map<Location, BlockBase> getBlocks() {
+        return blocks;
     }
 }
