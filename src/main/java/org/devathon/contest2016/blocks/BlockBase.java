@@ -6,6 +6,8 @@ import org.bukkit.inventory.Recipe;
 
 public interface BlockBase {
 
+    String getSimpleName();
+
     String getName();
 
     ItemStack getItem();

@@ -1,0 +1,27 @@
+Note: There was a lot more planned for this but I decided to restart this at about 4 in the morning and went to sleep at about 6. When I woke up there was only 2 hours left.
+
+Machines done:
+    ☐ Block breaker
+
+
+How to craft:
+  Blockbreaker:
+    ☐ You need 2 iron ingots, 1 diamond pickaxe, 1 redstone dust and 5 cobblestone.
+      IRON COBBLE COBBLE
+      PICK REDSTONE COBBLE
+      IRON COBBLE COBBLE
+      https://gyazo.com/d19d41415bde8a8f48d3c4a88b7f3557
+
+How it works:
+  Blockbreaker:
+    When you place the blockbreaker you can put blocks infront of it, the blockbreaker will then mine these blocks and output them.
+    If there is a chest below or ontop the items will go into there if they have room. If they do not they will be spat out. 
+    If there is no chest then the items will again be spat out.
+
+    Things you can do with this machine:
+      A nice cobble gen
+      https://gyazo.com/645d9310840149a078078ad1071284ed
+
+      This can also be used as a replacement for silk touch since this will not mine ores.
+
+      This cannot be used to mine bedrock!

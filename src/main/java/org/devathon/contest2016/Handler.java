@@ -25,6 +25,11 @@ public class Handler {
         this.blocks.put(loc, block);
     }
 
+    public void removeBlock(Location location) {
+        if(this.blocks.containsKey(location))
+            this.blocks.remove(location);
+    }
+
     private void registerBlock(BlockBase block){
         this.registry.add(block);
     }
