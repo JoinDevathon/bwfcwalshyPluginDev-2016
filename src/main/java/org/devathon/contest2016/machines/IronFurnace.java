@@ -2,13 +2,15 @@ package org.devathon.contest2016.machines;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.devathon.contest2016.CustomHead;
 
-public class IronFurnace implements Machine {
+public class IronFurnace implements IMachine {
 
     @Override
     public String getName() {
@@ -33,7 +35,12 @@ public class IronFurnace implements Machine {
     }
 
     @Override
-    public void handleInteract() {
+    public Machine getMachineEnum() {
+        return Machine.IRON_FURNACE;
+    }
+
+    @Override
+    public void handleInteract(Player player, Block b) {
 
     }
 

@@ -2,25 +2,25 @@ package org.devathon.contest2016;
 
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.devathon.contest2016.machines.Generator;
 import org.devathon.contest2016.machines.IronFurnace;
 import org.devathon.contest2016.machines.Machine;
+import org.devathon.contest2016.machines.MachineHandler;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class DevathonPlugin extends JavaPlugin {
 
     private Set<Machine> registries;
-    private Map<Location, Machine> machines;
+
+    private MachineHandler machineHandler;
 
     @Override
     public void onEnable() {
         registries = new HashSet<>();
         registries.add(new IronFurnace());
-
-        machines = new HashMap<>();
+        registries.add(new Generator());
 
         // Load from data.yml
 
@@ -33,7 +33,15 @@ public class DevathonPlugin extends JavaPlugin {
     }
 
     public void registerMachine(Location loc, Machine machine){
-        this.machines.put(loc, machine);
+        this.machineHandler.getMachines().put(loc, machine);
+    }
+
+    public MachineHandler getMachineHandler() {
+        return machineHandler;
+    }
+
+    public Set<Machine> getMachineInstances() {
+        return registries;
     }
 }
 
