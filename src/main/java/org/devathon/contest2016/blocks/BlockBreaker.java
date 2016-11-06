@@ -1,6 +1,7 @@
 package org.devathon.contest2016.blocks;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
@@ -35,7 +36,7 @@ public class BlockBreaker implements BlockBase {
     }
 
     @Override
-    public void tick() {
+    public void tick(Location location) {
 
     }
 }
